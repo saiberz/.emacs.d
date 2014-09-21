@@ -82,6 +82,16 @@
      undo-tree
      erc
 
+     ;;org
+     ox-html5slide
+
+     ;;deps for ipython
+     markdown-mode
+     markdown-mode+
+
+     ;;Web
+     angular-snippets
+
      ;; Matlab
      matlab-mode
 
@@ -106,6 +116,9 @@
 
      ;; HTML
      emmet-mode
+     js2-refactor
+     tern
+     tern-auto-complete
 
      ;; Python
      virtualenvwrapper

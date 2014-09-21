@@ -1,6 +1,8 @@
 ;; helm
-;(global-set-key (kbd "C-c o") 'helm-overlord)
-;(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key [f11] 'switch-full-screen)
+
+(global-set-key (kbd "<menu>") 'helm-overlord)
+(global-set-key (kbd "M-x") 'helm-M-x)
 ;(global-set-key (kbd "C-<SPC>") 'helm-M-x)
 ;(global-set-key (kbd "C-§") 'helm-yas-complete)
 
@@ -46,8 +48,8 @@
 ;(global-set-key (kbd "C-x 3") (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 
 ;; smartparens
-;(define-key sp-keymap (kbd "C-M-f") 'sp-forward-sexp)
-;(define-key sp-keymap (kbd "C-M-b") 'sp-backward-sexp)
+(define-key sp-keymap (kbd "C-M-f") 'sp-forward-sexp)
+(define-key sp-keymap (kbd "C-M-b") 'sp-backward-sexp)
 
 ;(define-key sp-keymap (kbd "C-M-d") 'sp-down-sexp)
 ;(define-key sp-keymap (kbd "C-M-a") 'sp-backward-down-sexp)
