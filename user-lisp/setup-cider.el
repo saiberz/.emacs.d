@@ -25,9 +25,9 @@
 ;; Indent and highlight more commands
 (put-clojure-indent 'match 'defun)
 
-(require 'ac-nrepl)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+;;(require 'ac-nrepl)
+;;(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+;;(add-hook 'cider-mode-hook 'ac-nrepl-setup)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'cider-repl-mode))
 
@@ -38,8 +38,8 @@
 (add-hook 'cider-repl-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
-(eval-after-load "cider"
-  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
+;;(eval-after-load "cider"
+;;  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
 (define-clojure-indent
   (fact 'defun)

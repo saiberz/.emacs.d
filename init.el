@@ -62,6 +62,8 @@
      helm-c-yasnippet
      perspective
      projectile
+     helm-projectile
+     helm-projectile-all
      multi-term
      exec-path-from-shell
      whitespace-cleanup-mode
@@ -100,9 +102,10 @@
      dash-at-point
 
      ;; Clojure
-     ac-nrepl
+     ;;     ac-nrepl
+     elein
      cider
-     cider-tracing
+;;     cider-tracing
      clj-refactor
      clojure-cheatsheet
      clojure-snippets
@@ -154,9 +157,6 @@
 
 ;; Setup Key bindings
 (require 'key-bindings)
-
-;; Load Mac-only config
-;(when is-mac (require 'mac))
 
 ;; Emacs server
 (require 'server)
