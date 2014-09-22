@@ -3,6 +3,10 @@
       color-theme-is-global t
       truncate-partial-width-windows nil)
 
+;;Full screen
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
 ;;Show lines number
 (global-linum-mode t)
 
