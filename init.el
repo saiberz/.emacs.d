@@ -12,47 +12,31 @@
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
 
+(setq ess-dir
+      (expand-file-name "ESS/lisp" site-lisp-dir))
+
+(setq inferior-julia-program-name "/usr/bin/julia")
+
 (setq user-lisp-dir
       (expand-file-name "user-lisp" user-emacs-directory))
-
-(setq elget
-      (expand-file-name "elget" user-emacs-directory))
 
 ;; Set up load path
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path user-lisp-dir)
-(add-to-list 'load-path elget)
-
+(add-to-list 'load-path ess-dir)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+(load (expand-file-name "ess-site.el" ess-dir))
+
+
+(directory-files user-lisp-dir nil "^[^#].*el$")
+
 ;; Set up appearance early
 (require 'appearance)
-
-;; Write backup files to own directory
-;(setq backup-directory-alist
-;      `(("." . ,(expand-file-name
-;                 (concat user-emacs-directory "backups")))))
-
-
-;; el-get
-
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
-
-;;
 
 ;; Setup packages
 (require 'setup-package)
@@ -63,7 +47,7 @@
    '(dired-details
      auto-complete
      gist
-     yasnippet
+;     yasnippet
      flx-ido
      ido-ubiquitous
 ;     evil
@@ -78,8 +62,6 @@
      helm-c-yasnippet
      perspective
      projectile
-     helm-projectile
-     helm-projectile-all
      multi-term
      exec-path-from-shell
      whitespace-cleanup-mode
@@ -100,6 +82,12 @@
      undo-tree
      erc
 
+     ;;Helm
+     helm-projectile
+     helm-recoll
+     helm-projectile-all
+     helm-c-yasnippet
+
      ;;org
      ox-html5slide
 
@@ -113,14 +101,11 @@
      ;; Matlab
      matlab-mode
 
-     ;; OSX
-     erc-terminal-notifier
-     dash-at-point
-
      ;; Clojure
      ;;     ac-nrepl
      elein
-     cider
+;     cider
+;     ac-cider
 ;;     cider-tracing
      clj-refactor
      clojure-cheatsheet
@@ -132,6 +117,15 @@
 
      ;; YAML
      yaml-mode
+
+     ;;Web
+     web-mode
+     restclient ;;Para enviar peticiones http rest
+     impatient-mode ;;Visualizacion de html en tiempo real
+     php-mode ;; Puede ser util
+     rainbow-mode
+     w3m ;;Navegador web
+     elixir-mode
 
      ;; HTML
      emmet-mode
@@ -151,6 +145,7 @@
 
      ;; Others
      helm-spotify
+     zeal-at-point
 
      ;; Coffeescript
      coffee-mode
@@ -183,6 +178,40 @@
 ;(when (memq window-system '(mac ns))
 ;  (exec-path-from-shell-initialize))
 
-; Load user specific configuration
+;; Load el-get
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
+
+;;packages
+; anaconda-mode
+; auto-complete
+; dash
+; el-get
+; f
+; fuzzy
+; gnus-notify
+; gnus-notify+
+; json-rpc
+; julia-mode
+; markdown-mode
+; popup
+; pos-tip
+; python
+; python-mode
+; request
+; s
+; websocket
+
+
+;; Load .el
 (when (file-exists-p user-lisp-dir)
   (mapc 'load (directory-files user-lisp-dir nil "^[^#].*el$")))

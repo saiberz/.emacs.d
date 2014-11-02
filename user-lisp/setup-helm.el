@@ -3,8 +3,7 @@
 
 (setq helm-ff-transformer-show-only-basename nil)
 
-;; sauce: http://stackoverflow.com/questions/19283368/how-can-i-open-quickly-a-file-in-emacs
-;; you'll need to require helm-config and helm-projectile somewhere above
+
 (defun helm-overlord (&rest arg)
   ;; just in case someone decides to pass an argument, helm-omni won't fail.
   (interactive)
