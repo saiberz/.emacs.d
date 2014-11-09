@@ -54,7 +54,7 @@
 ;     evil-visualstar
 ;     surround
      smartparens
-     rainbow-delimiters
+;     rainbow-delimiters ;fu colors
      magit
      git-gutter
      helm
@@ -120,11 +120,10 @@
 
      ;;Web
      web-mode
-     restclient ;;Para enviar peticiones http rest
-     impatient-mode ;;Visualizacion de html en tiempo real
-     php-mode ;; Puede ser util
+     restclient ;; http rest
+     impatient-mode ;; real time
      rainbow-mode
-     w3m ;;Navegador web
+     w3m
      elixir-mode
 
      ;; HTML
@@ -146,6 +145,8 @@
      ;; Others
      helm-spotify
      zeal-at-point
+     ddg
+     heroku
 
      ;; Coffeescript
      coffee-mode
