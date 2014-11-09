@@ -147,6 +147,7 @@
      zeal-at-point
      ddg
      heroku
+     gnus-desktop-notify
 
      ;; Coffeescript
      coffee-mode
