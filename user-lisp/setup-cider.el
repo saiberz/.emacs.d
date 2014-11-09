@@ -20,7 +20,6 @@
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
-(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
 ;; Indent and highlight more commands
 (put-clojure-indent 'match 'defun)
