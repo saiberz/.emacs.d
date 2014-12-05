@@ -25,8 +25,7 @@
 ;  (set-frame-font "Monaco")
 ;  (set-face-attribute 'default nil :family "Monaco" :height 110 :weight 'bold)
                                         ;  (set-face-font 'default "Monaco"))
-
-(load-theme 'monokai)
+(load-theme 'base16-tomorrow)
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)
@@ -89,6 +88,10 @@
 
 (setq initial-scratch-message (concat ";;" (get-random-quote) "\n"))
 
+; Change color hl current line
+;(global-hl-line-mode nil)
+(set-face-background hl-line-face "gray35")
+;(list-colors-display)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
