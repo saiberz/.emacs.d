@@ -154,6 +154,7 @@
 
      ;; Javascript
      js2-mode
+     react-snippets
      js2-refactor
      ac-js2
      skewer-mode

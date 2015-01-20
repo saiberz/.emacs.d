@@ -91,6 +91,7 @@
 ; Change color hl current line
 ;(global-hl-line-mode nil)
 (set-face-background hl-line-face "gray35")
+
 ;(list-colors-display)
 
 (require 'uniquify)
