@@ -25,7 +25,7 @@
 ;  (set-frame-font "Monaco")
 ;  (set-face-attribute 'default nil :family "Monaco" :height 110 :weight 'bold)
                                         ;  (set-face-font 'default "Monaco"))
-(load-theme 'base16-tomorrow)
+(load-theme 'monokai)
 
 ;; Don't defer screen updates when performing operations
 (setq redisplay-dont-pause t)

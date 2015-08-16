@@ -12,11 +12,6 @@
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
 
-(setq ess-dir
-      (expand-file-name "ESS/lisp" site-lisp-dir))
-
-(setq inferior-julia-program-name "/usr/bin/julia")
-
 (setq user-lisp-dir
       (expand-file-name "user-lisp" user-emacs-directory))
 
@@ -24,14 +19,10 @@
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path user-lisp-dir)
-(add-to-list 'load-path ess-dir)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
-
-(load (expand-file-name "ess-site.el" ess-dir))
-
 
 (directory-files user-lisp-dir nil "^[^#].*el$")
 
@@ -85,7 +76,7 @@
      ;;Helm
      helm-projectile
      helm-recoll
-     helm-projectile-all
+     helm-project-persist
      helm-c-yasnippet
 
      ;;org
@@ -104,8 +95,8 @@
      ;; Clojure
      ;;     ac-nrepl
      elein
-;     cider
-;     ac-cider
+     cider
+     ac-cider
 ;;     cider-tracing
      clj-refactor
      clojure-cheatsheet
@@ -145,9 +136,9 @@
      ;; Others
      helm-spotify
      zeal-at-point
-     ddg
      heroku
      gnus-desktop-notify
+     erc-terminal-notifier
 
      ;; Coffeescript
      coffee-mode

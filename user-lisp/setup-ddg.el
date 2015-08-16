@@ -1,4 +1,4 @@
-(require 'ddg)
+;(require 'ddg)
 
 
 
